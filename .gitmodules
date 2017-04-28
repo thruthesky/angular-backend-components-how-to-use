@@ -1,0 +1,3 @@
+[submodule "src/angular-backend-components"]
+	path = src/angular-backend-components
+	url = https://github.com/thruthesky/angular-backend-components
