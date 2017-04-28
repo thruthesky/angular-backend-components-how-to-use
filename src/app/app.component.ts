@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  TestAll,
-  User
-} from 'angular-backend';
+import { User } from 'angular-backend';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,14 +8,9 @@ import {
 export class AppComponent {
   title = 'app works!';
   view: string = 'forum-infinite';
-  constructor(
-    public user: User,
-    ta: TestAll ) {
-    ta.backend.setBackendUrl('http://backend.org/index.php');
-    // ta.run();
+  constructor( public user: User ) {
+    user.setBackendUrl('http://backend.org/index.php');
   }
-
-
   onError( str ) {
     alert( str );
   }

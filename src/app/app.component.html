@@ -2,12 +2,9 @@
   <h1>
     {{title}}
   </h1>
-
-
   <div *ngIf=" user.logged ">
     Welcome, {{ user.info.id }}.
   </div>
-
   <nav class="my-2">
     <button type="button" (click)=" view = 'home' ">Home</button>
     <button *ngIf=" ! user.logged " type="button" (click)=" view='login' ">Login</button>
@@ -15,16 +12,12 @@
     <button *ngIf=" ! user.logged " type="button" (click)=" view='register' ">Register</button>
     <button *ngIf=" user.logged " type="button" (click)=" view='register' ">Profile Update</button>
     <button *ngIf=" user.logged " type="button" (click)=" view='password' ">Password Update</button>
-    <button type="button" (click)=" view='forum' " >Forum</button>
-    <button type="button" (click)=" view='forum-infinite' " >Forum (Infinite)</button>
+    <button type="button" (click)=" view='forum' ">Forum</button>
+    <button type="button" (click)=" view='forum-infinite' ">Forum (Infinite)</button>
   </nav>
-
-
   <div *ngIf=" view == 'home' ">
     <h2>Home</h2>
   </div>
-
-
   <login-form-basic *ngIf=" view == 'login' " (login)=" view = 'home' " (error)=" onError($event) ">
   </login-form-basic>
   <register-form-basic *ngIf=" view == 'register' ">
